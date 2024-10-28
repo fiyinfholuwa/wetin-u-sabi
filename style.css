@@ -1,0 +1,200 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f0f5f3; /* Light greenish-white background */
+}
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  background: #3a5f47; /* Dark green */
+  padding: 30px;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.heading {
+  text-align: center;
+  font-size: 40px;
+  color: #ffffff; /* White text */
+  margin-bottom: 50px;
+}
+label {
+  display: block;
+  font-size: 12px;
+  margin-bottom: 10px;
+  color: #e6f2ed; /* Light greenish-gray */
+}
+select {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  background: #ffffff; /* White background */
+  color: #3a5f47; /* Dark green text */
+  font-size: 14px;
+}
+.start-screen .btn {
+  margin-top: 50px;
+}
+.hide {
+  display: none;
+}
+.timer {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 30px;
+}
+.timer .progress {
+  position: relative;
+  width: 100%;
+  height: 40px;
+  background: transparent;
+  border-radius: 30px;
+  overflow: hidden;
+  margin-bottom: 10px;
+  border: 3px solid #6ba66a; /* Soft green border */
+}
+.timer .progress .progress-bar {
+  width: 100%;
+  height: 100%;
+  border-radius: 30px;
+  overflow: hidden;
+  background: linear-gradient(to right, #67d685, #4ca664); /* Green gradient */
+  transition: 1s linear;
+}
+.timer .progress .progress-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ffffff; /* White text */
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.question-wrapper .number {
+  color: #c5d4c6; /* Light green-gray */
+  font-size: 25px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+.question-wrapper .number .total {
+  color: #8e9e8f; /* Muted green-gray */
+  font-size: 18px;
+}
+.question-wrapper .question {
+  color: #ffffff; /* White text */
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.answer-wrapper .answer {
+  width: 100%;
+  height: 60px;
+  padding: 20px;
+  border-radius: 10px;
+  color: #ffffff; /* White text */
+  border: 3px solid #6ba66a; /* Soft green */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  cursor: pointer;
+  transition: 0.3s linear;
+}
+.answer .checkbox {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 3px solid #6ba66a; /* Greenish border */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+}
+.answer .checkbox i {
+  color: #ffffff; /* White icon */
+  font-size: 10px;
+  opacity: 0;
+  transition: all 0.3s;
+}
+.answer:hover:not(.checked) .checkbox,
+.answer.selected .checkbox {
+  background-color: #4ca664; /* Deep green */
+  border-color: #4ca664;
+}
+.answer.selected .checkbox i {
+  opacity: 1;
+}
+.answer.correct {
+  border-color: #67d685; /* Light green for correct */
+}
+.answer.wrong {
+  border-color: #fc3939; /* Red for wrong */
+}
+.question-wrapper,
+.answer-wrapper {
+  margin-bottom: 50px;
+}
+.btn {
+  width: 100%;
+  height: 60px;
+  background: #4ca664; /* Green button */
+  border: none;
+  border-radius: 10px;
+  color: #ffffff; /* White text */
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s linear;
+}
+.btn:hover {
+  background: #3b7c51; /* Darker green */
+}
+.btn:disabled {
+  background: #8e9e8f; /* Muted green-gray */
+  cursor: not-allowed;
+}
+.btn.next {
+  display: none;
+}
+
+.end-screen .score {
+  color: #ffffff; /* White text */
+  font-size: 25px;
+  font-weight: 500;
+  margin-bottom: 80px;
+  text-align: center;
+}
+.score .score-text {
+  color: #c5d4c6; /* Light green-gray */
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 120px;
+}
+
+@media (max-width: 468px) {
+  .container {
+    min-height: 100vh;
+    max-width: 100%;
+    border-radius: 0;
+  }
+}
